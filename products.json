@@ -1,0 +1,23 @@
+{
+    "mens": [
+    {
+        "name": "Casual Shirt",
+        "price": 399,
+        "img": "images//61lsSUJhf0L._SY879_.jpg"
+    }
+    ],
+    "womens": [
+    {
+        "name": "Summer Dress",
+        "price": 1299,
+        "img": "images//W1.jpg"
+    }
+    ],
+    "kids": [
+    {
+        "name": "Kids T-shirt",
+        "price": 499,
+        "img": "images//K1.jpeg"
+    }
+    ]
+}

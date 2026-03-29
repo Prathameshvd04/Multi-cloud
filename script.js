@@ -4,18 +4,16 @@ let currentUser = JSON.parse(localStorage.getItem("currentUser")) || null;
 
 /* ================= PRODUCTS ================= */
 
-function getProducts(){
-    return JSON.parse(localStorage.getItem("productsData")) || {
-        mens: [],
-        womens: [],
-        kids: []
-    };
+// ✅ FETCH FROM JSON (NOT localStorage)
+async function getProducts(){
+    const res = await fetch("products.json");
+    return await res.json();
 }
 
-function showProducts(category){
+async function showProducts(category){
 
     const section = document.getElementById("products");
-    const products = getProducts();
+    const products = await getProducts();
 
     section.innerHTML = "";
 
@@ -40,8 +38,8 @@ function showProducts(category){
 
 /* ================= CART ================= */
 
-function addToCart(category,index){
-    const products=getProducts();
+async function addToCart(category,index){
+    const products = await getProducts();
     cart.push(products[category][index]);
     localStorage.setItem("cart",JSON.stringify(cart));
     updateCart();
@@ -139,8 +137,7 @@ function showAuthOptions(){
     `;
 }
 
-/* ---------- SIGN UP ---------- */
-
+/* SIGNUP */
 function showSignup(){
     document.getElementById("profileArea").innerHTML = `
         <h3>Sign Up</h3>
@@ -154,12 +151,11 @@ function showSignup(){
 }
 
 function signup(){
-
-    const name = document.getElementById("name").value.trim();
-    const age = document.getElementById("age").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const address = document.getElementById("address").value.trim();
-    const password = document.getElementById("password").value.trim();
+    const name = name.value.trim();
+    const age = age.value.trim();
+    const phone = phone.value.trim();
+    const address = address.value.trim();
+    const password = password.value.trim();
 
     if(!name || !age || !phone || !address || !password){
         alert("Please fill all fields");
@@ -179,12 +175,10 @@ function signup(){
     localStorage.setItem("users", JSON.stringify(users));
 
     alert("Signup Successful!");
-
-    showAuthOptions(); // refresh to login/signup buttons
+    showAuthOptions();
 }
 
-/* ---------- LOGIN ---------- */
-
+/* LOGIN */
 function showLogin(){
     document.getElementById("profileArea").innerHTML = `
         <h3>Login</h3>
@@ -195,9 +189,8 @@ function showLogin(){
 }
 
 function login(){
-
-    const phone = document.getElementById("loginPhone").value.trim();
-    const password = document.getElementById("loginPass").value.trim();
+    const phone = loginPhone.value.trim();
+    const password = loginPass.value.trim();
 
     users = JSON.parse(localStorage.getItem("users")) || [];
 
@@ -215,8 +208,6 @@ function login(){
     }
 }
 
-/* ---------- SHOW USER DETAILS ---------- */
-
 function showUserDetails(){
     document.getElementById("profileArea").innerHTML = `
         <h3>My Profile</h3>
@@ -228,15 +219,11 @@ function showUserDetails(){
     `;
 }
 
-/* ---------- LOGOUT ---------- */
-
 function logout(){
     currentUser = null;
     localStorage.removeItem("currentUser");
     alert("Logged Out Successfully");
     showAuthOptions();
 }
-
-/* ================= INIT ================= */
 
 updateCart();
