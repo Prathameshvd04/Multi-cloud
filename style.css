@@ -1,0 +1,256 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+/* HEADER */
+.header{
+    background:#111;
+    color:#fff;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:relative;
+    z-index:1000;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:600;
+}
+
+.nav-icons{
+    display:flex;
+    gap:20px;
+}
+
+.icon{
+    cursor:pointer;
+    font-size:20px;
+    position:relative;
+}
+
+.cart-icon span{
+    background:#d4af37;
+    color:#000;
+    font-size:12px;
+    padding:3px 7px;
+    border-radius:50%;
+    position:absolute;
+    top:-8px;
+    right:-10px;
+}
+
+/* HERO */
+.hero{
+    position:relative;
+    height:80vh;
+    z-index:1;
+}
+
+.hero-image{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:1;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background:rgba(0,0,0,0.5);
+    color:white;
+    text-align:center;
+}
+
+.hero-content h1{
+    font-size:50px;
+}
+
+/* 🔥 FIXED SHOP NOW BUTTON */
+.hero-content button{
+    margin-top:20px;
+    padding:14px 38px;      /* Slightly bigger */
+    font-size:16px;         /* Slight increase */
+    background:#d4af37;
+    border:none;
+    font-weight:600;
+    cursor:pointer;
+    border-radius:6px;
+}
+
+.hero-content button:hover{
+    opacity:0.9;
+}
+
+/* CATEGORIES */
+.categories{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    padding:60px 20px;
+}
+
+.category-card{
+    position:relative;
+    width:300px;
+    height:220px;
+    border-radius:12px;
+    overflow:hidden;
+    cursor:pointer;
+    box-shadow:0 15px 35px rgba(0,0,0,0.2);
+}
+
+.category-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.category-overlay{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    background:linear-gradient(transparent,rgba(0,0,0,0.7));
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+/* PRODUCTS */
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    padding:40px;
+}
+
+.product-card{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.product-card img{
+    width:100%;
+    height:220px;         
+    object-fit:contain;    
+    background:#f9f9f9;   
+    border-radius:8px;
+}
+.product-card button{
+    width:100%;
+    padding:10px;
+    background:#111;
+    color:white;
+    border:none;
+    margin-top:10px;
+    cursor:pointer;
+}
+
+/* CART */
+.cart-sidebar{
+    position:fixed;
+    right:-400px;
+    top:0;
+    width:350px;
+    height:100%;
+    background:white;
+    padding:20px;
+    box-shadow:-5px 0 20px rgba(0,0,0,0.2);
+    transition:0.4s;
+    display:flex;
+    flex-direction:column;
+    z-index:9999;
+}
+
+.cart-sidebar.active{
+    right:0;
+}
+
+.cart-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+/* 🔥 FIXED CROSS BUTTON */
+.cart-header span{
+    cursor:pointer;          /* Fix typing cursor */
+    font-size:18px;
+    user-select:none;        /* Prevent text selection */
+}
+
+.cart-footer{
+    margin-top:auto;
+}
+
+.checkout-btn{
+    width:100%;
+    padding:12px;
+    background:black;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+/* PROFILE */
+.profile-modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    justify-content:center;
+    align-items:center;
+    z-index:10001;
+}
+
+.profile-content{
+    background:white;
+    padding:30px;
+    width:350px;
+    border-radius:12px;
+    position:relative;
+}
+
+.profile-content input{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+}
+
+.profile-content button{
+    width:100%;
+    padding:10px;
+    background:#111;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+.close{
+    position:absolute;
+    top:10px;
+    right:15px;
+    cursor:pointer;
+    user-select:none;
+}
