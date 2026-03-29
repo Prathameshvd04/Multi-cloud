@@ -3,21 +3,34 @@
     {
         "name": "Casual Shirt",
         "price": 399,
-        "img": "images\\61lsSUJhf0L._SY879_.jpg"
+        "img": "images\\61lsSUJhf0L._SY879_.jpg",
+
+        
+        "name": "Casual Shirt",
+        "price": 499,
+        "img": "images\\2_27c89623-c1a7-43a7-a48d-382aa9db9675.webp"
     }
     ],
     "womens": [
     {
         "name": "Summer Dress",
         "price": 1299,
-        "img": "images\\W1.jpg"
+        "img": "images\\W1.jpg",
+
+        "name": "Summer Dress",
+        "price": 1099,
+        "img": "images\\W2.jpg"
     }
     ],
     "kids": [
     {
         "name": "Kids T-shirt",
         "price": 499,
-        "img": "images\\K1.jpeg"
+        "img": "images\\K1.jpeg",
+
+        "name": "Kids T-shirt",
+        "price": 499,
+        "img": "images\\K2.webp"
     }
     ]
 }
